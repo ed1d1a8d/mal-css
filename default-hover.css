@@ -21,6 +21,17 @@ BODY {
   color: #51819f !important;
 }
 
+#mal_cs_pic,
+#mal_cs_listinfo,
+#mal_cs_links {
+  border-right: 1px solid #ababab !important;
+  border-bottom: 1px solid #ababab !important;
+}
+
+#mal_cs_otherlinks {
+  border-bottom: 1px solid #ababab !important;
+}
+
 /* Don't show existing image */
 #mal_cs_pic img {
   opacity: 0;
@@ -33,15 +44,8 @@ BODY {
   background-position: center;
 }
 
-#mal_cs_pic,
-#mal_cs_listinfo,
-#mal_cs_links {
-  border-right: 1px solid #ababab !important;
-  border-bottom: 1px solid #ababab !important;
-}
-
-#mal_cs_otherlinks {
-  border-bottom: 1px solid #ababab !important;
+#searchBox {
+  font-family: monospace;
 }
 
 /* Determines the positioning of your list */
