@@ -6,6 +6,21 @@ BODY {
   background-color: #ffffff;
 }
 
+/* Override mal_control_strip defaults */
+
+#mal_control_strip {
+  background-image: none !important;
+  background-color: #e7f1f7 !important;
+}
+
+#mal_control_strip a {
+  color: #51819f !important;
+}
+
+#mal_control_strip td div {
+  color: #51819f !important;
+}
+
 /* Determines the positioning of your list */
 #list_surround {
   margin: 0 auto;
