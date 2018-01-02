@@ -32,16 +32,22 @@ BODY {
   border-bottom: 1px solid #ababab !important;
 }
 
-/* Don't show existing image */
-#mal_cs_pic img {
-  opacity: 0;
+#mal_cs_pic {
+  /* assymetry for visual balance of MAL logo */
+  padding: 0 0.8em 0 1em !important;
 }
 
-#mal_cs_pic {
-  background: url(https://ed1d1a8d.github.io/mal-css/mal-logo-blue.png);
-  background-size: 90%;
-  background-repeat: no-repeat;
-  background-position: center;
+#mal_cs_pic img {
+  width: 0px;
+  height: 0px;
+  background: url("https://ed1d1a8d.github.io/mal-css/mal-logo-blue.png") !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% !important;
+  /* padding hack to size background */
+  padding-left: 150px !important;
+  padding-bottom: 40px !important;
+  /* visually center */
+  background-position-y: 60% !important;
 }
 
 #searchBox {
