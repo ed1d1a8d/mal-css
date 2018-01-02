@@ -21,6 +21,18 @@ BODY {
   color: #51819f !important;
 }
 
+/* Don't show existing image */
+#mal_cs_pic img {
+  opacity: 0;
+}
+
+#mal_cs_pic {
+  background: url(https://ed1d1a8d.github.io/mal-css/mal-logo-blue.png);
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 #mal_cs_pic,
 #mal_cs_listinfo,
 #mal_cs_links {
