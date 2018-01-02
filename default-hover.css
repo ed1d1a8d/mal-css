@@ -222,3 +222,7 @@ a:hover {
   margin: 0 auto;
   width: 920px;
 }
+
+#copyright::after {
+  content: "Source for custom CSS hosted at https://github.com/ed1d1a8d/mal-css.";
+}
