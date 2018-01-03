@@ -1,3 +1,18 @@
+@import url("https://ed1d1a8d.github.io/mal-css/cover-sources.css");
+
+:root {
+  --list-margin-left: 25px; /* list and left side of screen */
+  --list-width: 560px;
+  --list-hide-margin: 25px; /* gap between list and hide (cover area) */
+  --control-strip-height: 41px; /* includes 1px for border */
+  --hide-top-margin: 20px; /* gap between control strip and hide */
+  --hide-bot-margin: 20px; /* gap between hide and bottom of screen */
+  --hide-width: 250px;
+  --cover-height: 300px; /* the height of the actual cover image */
+  --cover-margin: 10px; /* min empty vertical distance around cover image */
+  --review-margin: 10px; /* distance from review to borders (not top) of hide */
+}
+
 BODY {
   margin: 0;
   color: #000000;
@@ -71,8 +86,100 @@ BODY {
 
 /* determines the positioning of your list */
 #list_surround {
-  margin: 0 auto;
-  width: 920px;
+  width: var(--list-width);
+  margin-left: var(--list-margin-left);
+}
+
+/* hides "-" and more link */
+#list_surround small {
+  font-size: 0px;
+}
+
+/* makes edit/add link still show */
+#list_surround small a:first-of-type {
+  font-size: calc(55px / 6);
+}
+
+#list_surround table:nth-of-type(n + 4):hover td:nth-of-type(3),
+#list_surround table:nth-of-type(n + 4):hover td:nth-of-type(4),
+#list_surround table:nth-of-type(n + 4):hover td:nth-of-type(5),
+#list_surround table:nth-of-type(n + 4):hover td:nth-of-type(6),
+#list_surround table:nth-of-type(n + 4):hover td:nth-of-type(7),
+#list_surround table:nth-of-type(n + 4):hover td:nth-of-type(8) {
+  display: table-cell;
+}
+
+/* cover and mini review (hover tag) area */
+.hide {
+  display: block !important;
+  visibility: hidden;
+  opacity: 0;
+
+  position: fixed;
+  left: calc(
+    var(--list-margin-left) + var(--list-width) + var(--list-hide-margin)
+  );
+  top: calc(var(--control-strip-height) + var(--hide-top-margin));
+
+  background-position: 50% var(--cover-margin);
+  background-repeat: no-repeat;
+
+  border-color: #ababab;
+  border-style: solid;
+  border-width: 1px;
+
+  background-size: auto var(--cover-height);
+  width: var(--hide-width);
+  height: calc(
+    100vh - var(--control-strip-height) - var(--hide-top-margin) -
+      var(--hide-bot-margin)
+  );
+}
+
+/* mini review (hover tag) area*/
+td[class^="td"]:nth-of-type(6) {
+  visibility: hidden;
+  opacity: 0;
+
+  position: fixed;
+  top: calc(
+    var(--control-strip-height) + var(--hide-top-margin) + 1px + 2 *
+      var(--cover-margin) + var(--cover-height)
+  );
+  left: calc(
+    var(--list-margin-left) + var(--list-width) + var(--list-hide-margin) + 1px +
+      var(--review-margin)
+  );
+
+  width: calc(var(--hide-width) - 2 * var(--review-margin));
+  height: calc(
+    100vh - var(--control-strip-height) - var(--hide-top-margin) -
+      var(--hide-bot-margin) - 2px - var(--review-margin) - 2 *
+      var(--cover-margin) - var(--cover-height)
+  );
+
+  font-size: 12px;
+  color: white !important;
+  z-index: 1;
+  background: transparent !important;
+  border: none;
+}
+
+/* tag text color */
+tr:hover td[class^="td"]:nth-of-type(6) a {
+  color: black !important;
+}
+
+/* other settings */
+:hover + .hide,
+tr:hover td[class^="td"]:nth-of-type(6) {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* deletes the header "Tags" */
+.table_header:nth-of-type(6) {
+  display: none !important;
 }
 
 /* all links on your list */
@@ -218,11 +325,9 @@ a:hover {
  */
 #copyright {
   padding-top: 6px;
-  text-align: center;
-  margin: 0 auto;
-  width: 920px;
 }
 
 #copyright::after {
+  display: block;
   content: "Source for custom CSS hosted at https://github.com/ed1d1a8d/mal-css.";
 }
