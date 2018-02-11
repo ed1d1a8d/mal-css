@@ -127,17 +127,6 @@ a:hover {
   padding: 2px;
 }
 
-/* headerLink represents the color of the links inside the table_header */
-
-.table_headerLink {
-}
-
-.table_headerLink:visited {
-}
-
-.table_headerLink:hover {
-}
-
 /* controls the select form decoration (the drop down select box) */
 .form {
   border-width: 1px 1px 1px 1px;
@@ -169,43 +158,15 @@ a:hover {
   background-color: #f1f1f1;
 }
 
-/* header classes for Currently Watching, Completed, Dropped, etc... */
-
-.header_cw {
-}
-
-.header_completed {
-}
-
-.header_onhold {
-}
-
-.header_dropped {
-}
-
-.header_ptw {
-}
-
 .header_title {
   font-size: 14px;
   font-weight: bold;
-}
-
-.category_totals {
-}
-
-#grand_totals {
-  text-align: center;
 }
 
 /* header_al is the div surrounding "User's Anime List" at the top */
 .header_al {
   font-weight: bold;
   font-size: 16px;
-}
-
-/* header_al_links is the div with your "Profile" and "MyAnimeList home" links */
-.header_al_links {
 }
 
 /* controls what styles you can give to all the anime titles in your list */
