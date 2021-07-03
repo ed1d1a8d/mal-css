@@ -185,7 +185,7 @@ a:hover {
  */
 #copyright {
   position: absolute;
-  margin-top: 0px !important;
+  margin-top: 15px !important;
 }
 
 #copyright::after {
